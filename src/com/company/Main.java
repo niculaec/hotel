@@ -10,11 +10,18 @@ public class Main {
         Guest guest4 = new Guest("Andreea", 220.00);
         Guest guest5 = new Guest("Radu", 777.00);
 
-        //Hotel.hotelManager.saveGuest(guest1);
+        Hotel hotel = new Hotel();
 
-        System.out.println(guest1);
-        ArrayList<Hotel> resultList = Hotel.class.getMethods();
-        System.out.println(resultList);
+        hotel.checkIn(guest1);
+        hotel.checkIn(guest2);
+        hotel.checkIn(guest3);
+        hotel.checkIn(guest4);
+        hotel.checkIn(guest5);
+
+        System.out.println(hotel.roomLists);
+
+        //ArrayList<Hotel> resultList = hotel.;
+        //System.out.println(resultList);
 
     }
 }
