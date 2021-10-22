@@ -33,9 +33,9 @@ public class Room {
         ROOM_NUMBER801
     }
 
-    public static int priceRange(int start, int finish){
+    public static int roomPriceRange(){
         Random random = new Random();
-        int randomPrice = random.nextInt(start + finish);
+        int randomPrice = random.nextInt(30 + 120);
         return randomPrice;
     }
 

@@ -22,7 +22,7 @@ public class Main {
         System.out.println(hotel.roomLists);
         System.out.println("Random price for a room is :");
 
-        System.out.println(Room.priceRange(1,100));
+        System.out.println(Room.roomPriceRange()+"$");
 
         //ArrayList<Hotel> resultList = hotel.;
         //System.out.println(resultList);
