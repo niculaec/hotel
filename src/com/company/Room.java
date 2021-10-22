@@ -1,20 +1,24 @@
 package com.company;
 
+import java.util.Random;
+
 public class Room {
     int roomNumber;
-    double price;
+    int price;
     Guest guest;
 
-    public Room(int roomNumber, double price) {
+
+    public Room(int roomNumber, int price) {
         this.roomNumber = roomNumber;
-        this.price = price;
     }
 
     public void checkIn(Guest guest){
+
         this.guest = guest;
     }
 
     public void checkOut(Guest guest){
+
         this.guest = null;
     }
 
@@ -26,7 +30,13 @@ public class Room {
         ROOM_NUMBER501,
         ROOM_NUMBER601,
         ROOM_NUMBER701,
-        ROOM_NUMBER801;
+        ROOM_NUMBER801
+    }
+
+    public static int priceRange(int start, int finish){
+        Random random = new Random();
+        int randomPrice = random.nextInt(start + finish);
+        return randomPrice;
     }
 
 }
