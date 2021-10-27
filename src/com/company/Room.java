@@ -22,21 +22,31 @@ public class Room {
         this.guest = null;
     }
 
-    public enum RoomNumber{
-        ROOM_NUMBER101,
-        ROOM_NUMBER201,
-        ROOM_NUMBER301,
-        ROOM_NUMBER401,
-        ROOM_NUMBER501,
-        ROOM_NUMBER601,
-        ROOM_NUMBER701,
-        ROOM_NUMBER801
+    /**
+     * generate Rooms with a roomNumber which will be sorted by the creation time with a random price.
+     * @param numberOfRooms number of created rooms
+     * @return room list sorted by room number with random price
+     */
+    public static ArrayList<Room> generateRooms(int numberOfRooms){
+        ArrayList<Room> roomList = new ArrayList<Room>();
+        for (numberOfRooms = 1; numberOfRooms <100; numberOfRooms++){
+
+        }
+            return roomList;
     }
 
-    public static int roomPriceRange(){
-        Random random = new Random();
-        int randomPrice = random.nextInt(30 + 120);
-        return randomPrice;
+    public static int generateRoomPriceInRange(int min, int max){
+        int result = new Random().nextInt(max);
+        if (result < min){
+            return min;
+        }
+        return result;
     }
+
+    public static int generateRoomPriceInRange2(int min, int max){
+
+        return min + new Random().nextInt(max - min);
+    }
+
 
 }
