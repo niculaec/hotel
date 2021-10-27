@@ -1,8 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 public class Main {
     public static void main(String[] args) {
         Guest guest1 = new Guest("Alex", 33.00);
@@ -22,10 +19,11 @@ public class Main {
         System.out.println(hotel.roomLists);
         System.out.println("Random price for a room is :");
 
-        System.out.println(Room.roomPriceRange()+"$");
+        System.out.println(Room.generateRoomPriceInRange(10,100) + "$");
 
-        //ArrayList<Hotel> resultList = hotel.;
-        //System.out.println(resultList);
+        System.out.println(Room.generateRoomPriceInRange2(6,123) + "$");
+
+        System.out.println(Room.generateRooms(5));
 
     }
 }
