@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Room {
@@ -8,7 +10,9 @@ public class Room {
     Guest guest;
 
 
+
     public Room(int roomNumber, int price) {
+
         this.roomNumber = roomNumber;
     }
 
@@ -23,13 +27,13 @@ public class Room {
     }
 
     /**
-     * generate Rooms with a roomNumber which will be sorted by the creation time with a random price.
+     * generate Rooms with a roomNumber which will be sorted by the room number with a random price.
      * @param numberOfRooms number of created rooms
      * @return room list sorted by room number with random price
      */
     public static ArrayList<Room> generateRooms(int numberOfRooms){
         ArrayList<Room> roomList = new ArrayList<Room>();
-        for (numberOfRooms = 1; numberOfRooms <100; numberOfRooms++){
+        for (int index = 0; index<numberOfRooms; index= index + 1){
 
         }
             return roomList;
