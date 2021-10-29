@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -10,10 +11,10 @@ public class Room {
     Guest guest;
 
 
-
     public Room(int roomNumber, int price) {
 
         this.roomNumber = roomNumber;
+        this.price = price;
     }
 
     public void checkIn(Guest guest){
@@ -26,6 +27,15 @@ public class Room {
         this.guest = null;
     }
 
+    @Override
+    public String toString() {
+        return "Room{" +
+                "roomNumber=" + roomNumber +
+                ", price=" + price +
+                ", guest=" + guest +
+                '}';
+    }
+
     /**
      * generate Rooms with a roomNumber which will be sorted by the room number with a random price.
      * @param numberOfRooms number of created rooms
@@ -33,8 +43,9 @@ public class Room {
      */
     public static ArrayList<Room> generateRooms(int numberOfRooms){
         ArrayList<Room> roomList = new ArrayList<Room>();
-        for (int index = 0; index<numberOfRooms; index= index + 1){
-
+        for (int index = 1; index<numberOfRooms; index= index + 1){
+            Room room = new Room(index,generateRoomPriceInRange(2,10));
+            roomList.add(room);
         }
             return roomList;
     }
