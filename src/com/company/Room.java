@@ -10,23 +10,6 @@ public class Room {
     int price;
     Guest guest;
 
-
-    public Room(int roomNumber, int price) {
-
-        this.roomNumber = roomNumber;
-        this.price = price;
-    }
-
-    public void checkIn(Guest guest){
-
-        this.guest = guest;
-    }
-
-    public void checkOut(Guest guest){
-
-        this.guest = null;
-    }
-
     @Override
     public String toString() {
         return "Room{" +
@@ -36,16 +19,30 @@ public class Room {
                 '}';
     }
 
+    public Room(int roomNumber, int price) {
+        this.roomNumber = roomNumber;
+        this.price = price;
+    }
+
+    public void checkIn(Guest guest){
+        this.guest = guest;
+    }
+
+    public void checkOut(Guest guest){
+        this.guest = null;
+    }
+
     /**
-     * generate Rooms with a roomNumber which will be sorted by the room number with a random price.
+     * generate Rooms with a roomNumber which will be sorted by the creation time with a random price.
      * @param numberOfRooms number of created rooms
      * @return room list sorted by room number with random price
      */
     public static ArrayList<Room> generateRooms(int numberOfRooms){
         ArrayList<Room> roomList = new ArrayList<Room>();
-        for (int index = 1; index<numberOfRooms; index= index + 1){
+        for (int index = 1; index<numberOfRooms; index++){
             Room room = new Room(index,generateRoomPriceInRange(2,10));
             roomList.add(room);
+
         }
             return roomList;
     }
