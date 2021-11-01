@@ -22,8 +22,11 @@ public class Main {
         System.out.println(Room.generateRoomPriceInRange(10,100) + "$");
 
         System.out.println(Room.generateRoomPriceInRange2(6,123) + "$");
-
-        System.out.println(Room.generateRooms(5));
+        
+        System.out.println("Hotel rooms are:");
+        for (Room ddd: Room.generateRooms(5)) {
+            System.out.println(ddd.toString());
+        }
 
     }
 }
