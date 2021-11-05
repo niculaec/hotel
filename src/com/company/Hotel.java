@@ -10,9 +10,10 @@ public class Hotel {
     double revenue;
 
     public Hotel(int numberOfRooms) {
-
         roomList.addAll(Room.generateRooms(numberOfRooms));
+
     }
+
 
     public void displayHotelRevenue(){
         System.out.println("This is Hotel revenue:" + "\n" + revenue + "$");
@@ -32,10 +33,6 @@ public class Hotel {
 
     //indiciu: sortam lista de camere dupa pret descrescator. Pentru fiecare camera comparam pretul camerei cu banii clientului. Bagam clientul in camera(room check in), scadem pretul camerei din banii clientului si ii adaugam la venitul hotelului.
 
-    /**
-     *
-     * @param guest
-     */
     public void checkIn(Guest guest){
         boolean guestWasCheckIn = false;
         roomList.sort(Collections.reverseOrder(Room::compareTo));
@@ -69,9 +66,14 @@ public class Hotel {
                 break;
             }
         }
-
-       // guest
+    }
+    public void checkOutByRoomNumber( Guest guest){
+        for (Room room:roomList) {
+            if (room.guest == guest){
+                room.checkOut(guest);
+                break;
+            }
+        }
     }
 
 }
-
