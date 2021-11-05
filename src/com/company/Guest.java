@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-
-public class Guest {
-    String name;
+public class Guest {String name;
     Double money;
 
     public Guest(String name, Double money) {
