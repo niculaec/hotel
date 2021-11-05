@@ -1,8 +1,7 @@
 package com.company;
-import javax.swing.*;
+
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Objects;
 
 public class Room {
     int roomNumber;
@@ -18,20 +17,13 @@ public class Room {
                 '}';
     }
 
-
     private Room(int roomNumber, int price) {
         this.roomNumber = roomNumber;
         this.price = price;
     }
 
     public int compareTo(Room otherRoom) {
-        if (price < otherRoom.price) {
-            return -1;
-        } else if (price > otherRoom.price) {
-            return 1;
-        } else {
-            return 0;
-        }
+        return Integer.compare(price, otherRoom.price);
     }
 
     public void checkIn(Guest guest){
@@ -56,7 +48,7 @@ public class Room {
             Room room = new Room(index, generateRoomPriceInRange(10,100));
             roomList.add(room);
         }
-            return roomList;
+        return roomList;
     }
 
     public static int generateRoomPriceInRange(int min, int max){
@@ -71,6 +63,5 @@ public class Room {
 
         return min + new Random().nextInt(max - min);
     }
-
 
 }
