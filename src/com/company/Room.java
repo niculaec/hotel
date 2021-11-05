@@ -14,23 +14,37 @@ public class Room {
     public String toString() {
         return "Room{" +
                 "roomNumber=" + roomNumber +
-                ", price=" + price +
+                ", price=" + price + "$" +
                 ", guest=" + guest +
                 '}';
     }
 
-    public Room(int roomNumber, int price) {
+
+    private Room(int roomNumber, int price) {
         this.roomNumber = roomNumber;
         this.price = price;
     }
 
+    public int compareTo(Room otherRoom) {
+        if (price < otherRoom.price) {
+            return -1;
+        } else if (price > otherRoom.price) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+
     public void checkIn(Guest guest){
         this.guest = guest;
+        System.out.println("Guest check in:"+ toString());
     }
 
     public void checkOut(Guest guest){
+        System.out.println("Guest check out:"+ toString());
         this.guest = null;
     }
+
 
     /**
      * generate Rooms with a roomNumber which will be sorted by the creation time with a random price.
