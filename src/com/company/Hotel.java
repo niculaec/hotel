@@ -52,7 +52,15 @@ public class Hotel {
             System.out.println("Not enough money");
         }
     }
-   //decazam clientul din camera unde este cazat(de unde stim noi asta?)
+    public ArrayList<Room> findRoomByNumber(int roomNr){
+        ArrayList <Room> roomArrayList = new ArrayList<>();
+        for (Room room:roomList) {
+            if (room.roomNumber == roomNr)
+                roomArrayList.add(room);
+        }
+        return null;
+    }
+    //decazam clientul din camera unde este cazat(de unde stim noi asta?)
     //pentru fiecare guest care nu este null
     public void checkOut( Guest guest){
         for (Room room:roomList) {
