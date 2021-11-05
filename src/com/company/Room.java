@@ -1,9 +1,8 @@
 package com.company;
-
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
+import java.util.Objects;
 
 public class Room {
     int roomNumber;
@@ -53,10 +52,9 @@ public class Room {
      */
     public static ArrayList<Room> generateRooms(int numberOfRooms){
         ArrayList<Room> roomList = new ArrayList<Room>();
-        for (int index = 1; index<numberOfRooms; index++){
-            Room room = new Room(index,generateRoomPriceInRange(2,10));
+        for (int index = 1; index<numberOfRooms; index= index+1){
+            Room room = new Room(index, generateRoomPriceInRange(10,100));
             roomList.add(room);
-
         }
             return roomList;
     }
