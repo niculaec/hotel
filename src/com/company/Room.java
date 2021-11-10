@@ -31,10 +31,11 @@ public class Room {
         System.out.println("Guest check in:"+ toString());
     }
 
-    public void checkOut(Guest guest){
+    public void checkOut(){
         System.out.println("Guest check out:"+ toString());
         this.guest = null;
     }
+
 
 
     /**
