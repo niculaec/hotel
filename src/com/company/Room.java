@@ -58,6 +58,15 @@ public class Room {
         }
         return result;
     }
+    public static Room findRoomByNumber(int roomNumber, ArrayList<Room>roomList){
+        for (Room room:roomList) {
+            if (room.roomNumber == roomNumber){
+                return room;
+            }
+        }
+            return null;
+    }
+
 
     public static int generateRoomPriceInRange2(int min, int max){
 
