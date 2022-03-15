@@ -19,6 +19,7 @@ public class Main {
         athenePalace.checkOut(sergiu);
         //athenePalace.checkOut(guestList.get(2));
         athenePalace.checkIn(sergiu);
+        athenePalace.checkOutByRoomNumber(101);
 
 
         athenePalace.displayHotelRevenue();
